@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    height: 300px;
+    background-image: linear-gradient(
+        #F7EC7D 50px,
+        #E38F66 50px 100px,
+        #AA445F 100px 200px,
+        #62306D 200px 300px
+    );
+}

@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background: #0D1335;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.circle {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    background: #73C6EA;
+    border-radius: 50%;
+}
+.ellipse {
+    width: 250px;
+    height: 110px;
+    border: 10px solid;
+    border-radius: 50%;
+}
+
+.e1 {
+    border-color: #FBFAE2;
+}
+.e2 {
+    border-color: #4FA07B;
+    rotate: 120deg;
+}
+.e3 {
+    border-color: #DC6638;
+    rotate: -125deg
+}
