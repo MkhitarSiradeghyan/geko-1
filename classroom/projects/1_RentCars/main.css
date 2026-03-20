@@ -44,6 +44,7 @@
 html {}
 
 body {
+    height: 300vh;
     font-family: var(--font-family-main);
     color: var(--color-neutral-1);
 }
@@ -80,6 +81,7 @@ button {
     flex-direction: column;
     gap: 32px;
 }
+
 .common_title {
     padding: 16px 32px;
     background: var(--color-primary-bg);
@@ -88,8 +90,8 @@ button {
     font-weight: 500;
     font-size: var(--font-size-2);
     text-transform: uppercase;
-
 }
+
 .common_heading {
     font-weight: 500;
     font-size: var(--font-size-7);
@@ -272,12 +274,13 @@ button {
 .how {
     padding: 80px 0;
 }
+
 .how_wrap {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-gap: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 64px;
 }
 
 .how_group {
@@ -287,6 +290,7 @@ gap: 64px;
     align-items: start;
     max-width: 800px;
 }
+
 .how_item {
     display: flex;
     flex-direction: column;
@@ -294,6 +298,7 @@ gap: 64px;
     text-align: center;
     max-width: 200px;
 }
+
 .how_icon {
     background: var(--color-primary-bg);
     padding: 32px;
@@ -302,15 +307,99 @@ gap: 64px;
     aspect-ratio: 1 / 1;
     color: var(--color-primary);
 }
+
 .how_title {
     padding: 40px 0 24px;
     font-weight: 500;
     font-size: var(--font-size-5);
     color: var(--color-black);
 }
+
 .how_text {
     font-weight: 500;
     font-size: var(--font-size-2);
     color: var(--color-neutral-3);
     line-height: 1.6;
+}
+
+.brands_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    animation: logos linear;
+    animation-timeline: view();
+}
+
+.brands_logo {
+    height: 64px;
+    filter: grayscale();
+    opacity: 0.5;
+}
+
+.brands_logo > img {
+    height: 100%;
+}
+
+.why {
+    padding: 100px 0;
+    background: url("./img/about.png") no-repeat  left center / 50%;
+}
+.why_wrap {
+    display: flex;
+    justify-content: end;
+}
+.why_block {
+    width: 50%;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+}
+
+.why_hgroup {
+    align-items: start;
+}
+
+.why_group {
+display: flex;
+flex-direction: column;
+gap: 40px;
+}
+.why_item {
+display: grid;
+grid-template-columns: auto 1fr;
+gap: 0 24px;
+}
+.why_icon {
+    grid-row: span 2;
+    place-self: center;
+border-radius: var(--radius-3);
+background: var(--color-primary-bg);
+width: 64px;
+aspect-ratio: 1 / 1;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: var(--font-size-5);
+color: var(--color-primary);
+}
+.why_name {
+font-size: var(--font-size-5);
+font-weight: 500;
+color: var(--color-black);
+}
+.why_text {
+font-size: var(--font-size-3);
+font-weight: 400;
+color: var(--color-neutral-3);
+}
+
+@keyframes logos {
+    0% {
+        translate: 10%;
+    }
+
+    100% {
+        translate: -50%;
+    }
 }
