@@ -41,7 +41,9 @@
     box-sizing: border-box;
 }
 
-html {}
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     height: 300vh;
@@ -79,6 +81,7 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     gap: 32px;
 }
 
@@ -216,7 +219,7 @@ button {
 
 .hero {
     height: 100vh;
-    background: url("./img/hero.png") no-repeat right center / auto 100%;
+    background: #fff8 url("./img/hero.png") no-repeat right center / 50%;
 }
 
 .hero_wrap {
@@ -224,17 +227,19 @@ button {
     flex-direction: column;
     height: 100%;
     padding: 48px 0;
+    gap: 50px;
 }
 
 .hero_block {
     flex-grow: 1;
-    width: 50%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     gap: 30px;
+    padding: 50px 0;
 }
 
 .hero_title {
@@ -288,7 +293,7 @@ button {
 }
 
 .hero_group:not(:last-of-type) {
-    border-right: 1px solid var(--color-neutral-6);
+    border-right: 1px solid var(--color-neutral-7);
 }
 
 .hero_form_icon {
@@ -336,8 +341,10 @@ button {
 .how_group {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: start;
+    flex-wrap: wrap;
+    gap: 50px;
     max-width: 800px;
 }
 
@@ -357,7 +364,6 @@ button {
     aspect-ratio: 1 / 1;
     color: var(--color-primary);
 }
-
 .how_title {
     padding: 40px 0 24px;
     font-weight: 500;
@@ -374,11 +380,10 @@ button {
 
 .brands_wrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 60px;
-    animation: logos linear;
-    animation-timeline: view();
 }
 
 .brands_logo {
@@ -393,7 +398,7 @@ button {
 
 .why {
     padding: 100px 0;
-    background: url("./img/about.png") no-repeat left center / 50%;
+    background: #fff8 url("./img/about.png") no-repeat left center / 50%;
 }
 
 .why_wrap {
@@ -402,7 +407,8 @@ button {
 }
 
 .why_block {
-    width: 50%;
+    width: 90%;
+    max-width: 600px;
     display: flex;
     gap: 60px;
     flex-direction: column;
@@ -410,6 +416,9 @@ button {
 
 .why_hgroup {
     align-items: start;
+}
+.why_heading {
+    text-align: left;
 }
 
 .why_group {
@@ -624,7 +633,7 @@ button {
 }
 
 .app {
-    background: url("./img/triangle.png") no-repeat left center / 50%;
+    background: #fff8 url("./img/triangle.png") no-repeat left center / 50%;
     padding: 100px 0;
     overflow: hidden;
 }
@@ -636,7 +645,7 @@ button {
 }
 
 .app_block {
-    width: 50%;
+    width: 90%;
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -686,6 +695,7 @@ button {
     top: 0;
     left: 50%;
     translate: -50%;
+    width: 100%;
 }
 
 .footer {
@@ -787,16 +797,6 @@ button {
     color: var(--color-neutral-6);
 }
 
-@keyframes logos {
-    0% {
-        translate: 10%;
-    }
-
-    100% {
-        translate: -50%;
-    }
-}
-
 
 @media screen and (max-width: 920px) {
     .burger {
@@ -826,34 +826,77 @@ button {
     .header_auth {
         order: 1;
     }
+    .hero {
+        height: auto;
+    background-blend-mode: lighten;
+    background-position: top center;
+    background-size: 90%;
+
+    }
+    .hero_form  {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        padding: 30px;
+    }
+    .hero_group:not(:last-of-type) {
+        border: none;
+    }
+    .hero_group:not(:nth-of-type(2)) {
+        border-right: 1px solid var(--color-neutral-7);
+    }
+    .why {
+    background: none;
+
+    }
+    .why_hgroup {
+        align-items: center;
+        text-align: center;
+    }
+    .why_heading {
+        text-align: center;
+    }
+    .deals_group {
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+.app_wrap {
+    flex-direction: column;
+    gap: 50px;
+}
+.app_img {
+    aspect-ratio: 4 / 3;
+}
+.footer_top {
+    flex-direction: column;
+}
+.footer_contacts{
+    max-width: none;
+}
+.footer_nav {
+    grid-template-columns: repeat(2, 1fr);
+}
+.footer_copyright {
+    text-align: center;
+}
 }
 @media screen and (max-width: 567px) {
-    .burger {
-        order: 2;
-        display: block;
+    .hero_form {
+        grid-template-columns: 1fr;
     }
-    .header_nav {
-        translate: 100%;
-        transition: var(--transition);
-        position: fixed;
-        flex-direction: column;
-        width: 100%;
-        max-width: 400px;
-        top: 100%;
-        right: 0;
-        height: calc(100vh - 88px);
-        background: #333c;
-        color: var(--color-neutral-7);
+    .hero_group {
+        border: none !important;
     }
-    #check:checked ~ .header_nav {
-        translate: 0;
-    
+    .deals_group {
+        grid-template-columns: 1fr;
+        
     }
-    .header_navlist {
-        flex-direction: column;
+    .footer_nav {
+        gap: 50px 20px;
+        text-align: center;
     }
-    .header_auth {
-        order: 1;
+    .footer_media {
+        justify-content: center;
     }
     
 }
