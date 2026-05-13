@@ -8,6 +8,7 @@ import Register from "./pages/Register/Register";
 import Menu from "./pages/Menu/Menu";
 import NotFound from "./pages/NotFound/NotFound";
 import Details from "./pages/Details/Details";
+import ProductList from "./pages/ProductsList/ProductList";
 
 const App = () => {
   const [gumar, setGumar] = useState(0);
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/register" element={<Register/>}/>
         <Route path="/menu" element={<Menu/>}/>
         <Route path="/products/:id" element={<Details/>}/>
+        <Route path="/products" element={<ProductList/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>

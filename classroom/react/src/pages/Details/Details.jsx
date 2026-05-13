@@ -1,10 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router'
 
-const Details = () => {
-const {id} = useParams()
+const Details = ({product}) => {
   return (
-    <h1>Product: {id}</h1>
+    <>
+    <h1>#{product.id} - {product.title} - {product.price}<span>&#1423;</span></h1>
+
+    </>
   )
 }
 
