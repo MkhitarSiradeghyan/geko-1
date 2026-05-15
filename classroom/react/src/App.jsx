@@ -9,17 +9,13 @@ import Menu from "./pages/Menu/Menu";
 import NotFound from "./pages/NotFound/NotFound";
 import Details from "./pages/Details/Details";
 import ProductList from "./pages/ProductsList/ProductList";
+import Header from "./components/Header/Header";
 
 const App = () => {
   const [gumar, setGumar] = useState(0);
   return (
     <BrowserRouter>
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
-      <Link to="/login">Login</Link>
-    </nav>
+    <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>

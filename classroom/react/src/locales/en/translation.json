@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "greeting": "Hello, {{name}}!",
+  "description": "You have {{count}} unread message",
+  "description_plural": "You have {{count}} unread messages"
+}
